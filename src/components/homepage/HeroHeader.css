@@ -1,0 +1,22 @@
+.hero-header {
+  width: 48%;
+  height: fit-content;
+}
+
+.hero-header h1 {
+  color: #232323;
+  font-family: "Roboto Mono", monospace;
+  font-size: 3.35vw;
+  letter-spacing: 0.05vw;
+  text-transform: capitalize;
+}
+
+.hero-header p {
+  color: #232323;
+  font-size: 1.35vw;
+  font-weight: 300;
+  letter-spacing: 0.035vw;
+  line-height: 1.9vw;
+  text-transform: lowercase;
+  margin-top: 1.35vw;
+}
