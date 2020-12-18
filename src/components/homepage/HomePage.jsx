@@ -1,7 +1,13 @@
 import React from "react";
+import HeroHeader from "./HeroHeader";
+import "./HomePage.css";
 
 const HomePage = () => {
-  return <h1>Hello world</h1>;
+  return (
+    <div className="homepage-container">
+      <HeroHeader />
+    </div>
+  );
 };
 
 export default HomePage;
