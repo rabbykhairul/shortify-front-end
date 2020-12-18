@@ -1,0 +1,37 @@
+.input-box {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 1.5vw;
+}
+
+.input-box span {
+  font-size: 0.8vw;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.025vw;
+  width: 100%;
+  display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  font-size: 1vw;
+  font-weight: 300;
+  letter-spacing: 0.035vw;
+  width: 100%;
+  padding: 0.85vw;
+  margin-top: 0.75vw;
+  background-color: rgb(246, 246, 246);
+  border: 0.01vw solid transparent;
+  border-radius: 0.25vw;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 0.01vw solid black;
+  outline: none;
+}
