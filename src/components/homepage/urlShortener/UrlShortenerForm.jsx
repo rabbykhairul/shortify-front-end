@@ -17,6 +17,10 @@ const UrlShortenerForm = (props) => {
     onSubmit(originalURL);
   };
 
+  const shouldSubmitButtonBeDisabled = () => {
+    return originalURL.length === 0;
+  };
+
   return (
     <form onSubmit={handleFormSubmit}>
       <Input
@@ -27,7 +31,7 @@ const UrlShortenerForm = (props) => {
         value={originalURL}
         onChange={updateOriginalURL}
       />
-      <Button label="Get short URL" />
+      <Button label="Get short URL" disabled={shouldSubmitButtonBeDisabled()} />
     </form>
   );
 };
