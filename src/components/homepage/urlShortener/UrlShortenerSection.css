@@ -89,6 +89,19 @@
   outline: none;
 }
 
+.url-shortening-error-indicator {
+  color: tomato;
+  font-size: 1vw;
+  font-weight: 500;
+  letter-spacing: 0.075vw;
+  line-height: 1.75vw;
+  padding-bottom: 1vw;
+}
+
+.url-shortening-error-indicator ul {
+  margin-left: 3vw;
+}
+
 .short-new-url-prompt {
   color: dodgerblue;
   font-size: 0.75vw;

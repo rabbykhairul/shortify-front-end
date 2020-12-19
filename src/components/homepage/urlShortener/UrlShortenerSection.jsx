@@ -13,6 +13,10 @@ const UrlShortenerSection = () => {
   const [shouldDisplayShortUrlsInfo, setShouldDisplayShortUrlInfo] = useState(
     false
   );
+  const [
+    urlShorteningOperationFailed,
+    setUrlShorteningOperationFailed,
+  ] = useState(false);
   const [shortUrlString, setShortUrlString] = useState("");
   const [originalUrlString, setOriginalUrlString] = useState("");
 
@@ -22,10 +26,16 @@ const UrlShortenerSection = () => {
     setFormSubmitStatus(true);
     setShouldDisplayFormSubmtiAnimation(true);
 
-    setShortUrlString(await getShortUrl(originalURL));
+    try {
+      setShortUrlString(await getShortUrl(originalURL));
+      setShouldDisplayShortUrlInfo(true);
+    } catch (err) {
+      console.log(err.message);
+      console.log(err.response);
+      setUrlShorteningOperationFailed(true);
+    }
 
     setShouldDisplayFormSubmtiAnimation(false);
-    setShouldDisplayShortUrlInfo(true);
   };
 
   const copyShortUrlToClipboard = () => {
@@ -39,6 +49,7 @@ const UrlShortenerSection = () => {
 
   const letUserShortenAnotherLink = () => {
     setShouldDisplayShortUrlInfo(false);
+    setUrlShorteningOperationFailed(false);
     setFormSubmitStatus(false);
   };
 
@@ -50,6 +61,27 @@ const UrlShortenerSection = () => {
   const renderFormSubmitAnimation = () => {
     if (shouldDisplayFormSubmitAnimation)
       return <div className="dot-animation">...</div>;
+  };
+
+  const renderMessageToIndicateUrlShorteningError = () => {
+    if (urlShorteningOperationFailed)
+      return (
+        <>
+          <p className="url-shortening-error-indicator">
+            Shortening operation failed! May be -
+            <ul>
+              <li>the server is down</li>
+              <li>or you tried to shortend an invalid url</li>
+            </ul>
+          </p>
+          <p
+            className="short-new-url-prompt"
+            onClick={letUserShortenAnotherLink}
+          >
+            Click here to try again!
+          </p>
+        </>
+      );
   };
 
   const renderShortUrlInfo = () => {
@@ -80,6 +112,7 @@ const UrlShortenerSection = () => {
       <div className="card-style-container">
         {renderUrlShortenerForm()}
         {renderFormSubmitAnimation()}
+        {renderMessageToIndicateUrlShorteningError()}
         {renderShortUrlInfo()}
       </div>
     </div>
