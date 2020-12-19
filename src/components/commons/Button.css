@@ -1,10 +1,11 @@
 .btn {
-  color: #232323;
+  color: #fff;
   font-size: 0.85vw;
   letter-spacing: 0.025vw;
   width: fit-content;
   height: fit-content;
   padding: 0.85vw;
+  background-color: #232323;
   border: 0.025vw solid transparent;
   border-radius: 0.3vw;
   cursor: pointer;
@@ -12,10 +13,19 @@
 }
 
 .btn:hover {
-  color: #fff;
-  background-color: #232323;
+  background-color: dodgerblue;
 }
 
 .btn:focus {
   outline: none;
+}
+
+.btn-disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.btn-disabled:hover {
+  color: #fff;
+  background-color: #232323;
 }
