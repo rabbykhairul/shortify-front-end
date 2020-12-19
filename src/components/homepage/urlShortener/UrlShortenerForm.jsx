@@ -3,20 +3,22 @@ import Input from "../../commons/Input";
 import Button from "../../commons/Button";
 import "./UrlShortenerForm.css";
 
-const UrlShortenerForm = () => {
+const UrlShortenerForm = (props) => {
+  const { onSubmit } = props;
+
   const [originalURL, setOriginalURL] = useState("");
 
   const updateOriginalURL = (e) => {
     setOriginalURL(e.currentTarget.value);
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(originalURL);
+  };
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log("submitted");
-      }}
-    >
+    <form onSubmit={handleFormSubmit}>
       <Input
         type="text"
         label="Original URL"
