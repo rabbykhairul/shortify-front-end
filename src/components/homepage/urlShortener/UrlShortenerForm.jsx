@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { formatUrl } from "../../../services/shortUrlService";
 import Input from "../../commons/Input";
 import Button from "../../commons/Button";
 import "./UrlShortenerForm.css";
@@ -14,7 +15,9 @@ const UrlShortenerForm = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    onSubmit(originalURL);
+
+    const urlString = formatUrl(originalURL);
+    if (urlString) onSubmit(urlString);
   };
 
   const shouldSubmitButtonBeDisabled = () => {
