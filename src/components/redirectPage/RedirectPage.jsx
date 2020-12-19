@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getOriginalUrl } from "../../services/shortUrlService";
 import "./RedirectPage.css";
 
@@ -32,7 +33,9 @@ const RedirectPage = (props) => {
       return (
         <h1 className="error-message">
           This short url doesn't exist! To create a short url{" "}
-          <span>click here!</span>
+          <span>
+            <Link to="/">click here!</Link>
+          </span>
         </h1>
       );
   };
