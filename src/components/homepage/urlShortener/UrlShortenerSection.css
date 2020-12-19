@@ -36,3 +36,63 @@
     letter-spacing: 0.35vw;
   }
 }
+
+.url-type {
+  font-size: 0.9vw;
+  font-weight: 300;
+  letter-spacing: 0.085vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1vw;
+}
+
+.url-type:first-child {
+  padding-top: 0;
+}
+
+.url-string-box {
+  color: #fff;
+  font-size: 0.9vw;
+  font-weight: 500;
+  letter-spacing: 0.25vw;
+  word-wrap: break-word;
+  width: 100%;
+  height: fit-content;
+  padding: 0.95vw 1.25vw;
+  background-color: #232323;
+  border-radius: 0.5vw;
+}
+
+.copy-btn-container {
+  width: 100%;
+  text-align: center;
+  padding: 1.5vw;
+}
+
+.copy-btn {
+  font-size: 0.75vw;
+  font-weight: 500;
+  letter-spacing: 0.075vw;
+  padding: 0.65vw 0.95vw;
+  border: 0.1vw solid transparent;
+  border-radius: 0.85vw;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.copy-btn:hover {
+  color: #fff;
+  letter-spacing: 0.15vw;
+  background-color: tomato;
+}
+
+.copy-btn:focus {
+  outline: none;
+}
+
+.short-new-url-prompt {
+  color: dodgerblue;
+  font-size: 0.75vw;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
