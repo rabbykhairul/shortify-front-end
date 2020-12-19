@@ -38,7 +38,14 @@ const startsWithProperProtocol = (url) => {
 };
 
 const formatUrl = (url) => {
-  return startsWithProperProtocol(url) ? url : `https://${url}`;
+  const urlString = startsWithProperProtocol(url) ? url : `https://${url}`;
+
+  try {
+    const encodedUrl = new URL(urlString);
+    return encodedUrl.href;
+  } catch (err) {
+    return undefined;
+  }
 };
 
 export { getShortUrl, getOriginalUrl, formatUrl };
