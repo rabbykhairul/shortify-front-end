@@ -3,8 +3,9 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
-  padding-left: 8.75vw;
-  padding-bottom: 40vh;
+  padding: 0 8.75vw 40vh 8.75vw;
+  /* padding-left: 8.75vw; */
+  /* padding-bottom: 40vh; */
 }
 
 .redirect-page-container h1 {
@@ -40,4 +41,16 @@
   50% {
     margin-top: -1%;
   }
+}
+
+.redirect-page-container .error-message {
+  letter-spacing: 0.25vw;
+  opacity: 0.5;
+}
+
+.error-message span {
+  opacity: 1;
+  color: dodgerblue;
+  text-decoration: underline;
+  cursor: pointer;
 }
