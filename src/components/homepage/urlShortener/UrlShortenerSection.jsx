@@ -71,7 +71,7 @@ const UrlShortenerSection = () => {
             Shortening operation failed! May be -
             <ul>
               <li>the server is down</li>
-              <li>or you tried to shortend an invalid url</li>
+              <li>or you tried to shorten an invalid url</li>
             </ul>
           </p>
           <p
