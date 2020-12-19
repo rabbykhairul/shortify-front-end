@@ -1,12 +1,12 @@
 .url-shortener-section {
   width: 50%;
-  height: 100%;
+  height: fit-content;
 }
 
 .card-style-container {
   width: 100%;
-  height: 100%;
-  padding: 1vw;
+  height: fit-content;
+  padding: 2.85vw 3.5vw;
   border-radius: 1.25vw;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   overflow: hidden;
