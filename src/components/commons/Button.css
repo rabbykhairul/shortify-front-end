@@ -1,0 +1,21 @@
+.btn {
+  color: #232323;
+  font-size: 0.85vw;
+  letter-spacing: 0.025vw;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.85vw;
+  border: 0.025vw solid transparent;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #232323;
+}
+
+.btn:focus {
+  outline: none;
+}
