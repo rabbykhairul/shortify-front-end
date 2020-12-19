@@ -16,4 +16,17 @@ const getShortUrl = async (originalURL) => {
   return undefined;
 };
 
-export { getShortUrl };
+const getOriginalUrl = async (shortCode) => {
+  try {
+    const { data } = await http.get(
+      `${SHORT_URL_API_END_POINT}?shortCode=${shortCode}`
+    );
+    return data.originalURL;
+  } catch (err) {
+    console.log(err.response);
+  }
+
+  return undefined;
+};
+
+export { getShortUrl, getOriginalUrl };
