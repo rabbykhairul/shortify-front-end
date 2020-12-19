@@ -4,6 +4,7 @@ import UrlShortenerForm from "./UrlShortenerForm";
 import "./UrlShortenerSection.css";
 
 const UrlShortenerSection = () => {
+  // state variables
   const [formSubmitStatus, setFormSubmitStatus] = useState(false);
   const [
     shouldDisplayFormSubmitAnimation,
@@ -12,13 +13,16 @@ const UrlShortenerSection = () => {
   const [shouldDisplayShortUrlsInfo, setShouldDisplayShortUrlInfo] = useState(
     false
   );
+  const [shortUrlString, setShortUrlString] = useState("");
+  const [originalUrlString, setOriginalUrlString] = useState("");
 
+  // event handlers
   const shortenUrl = async (originalURL) => {
-    console.log(originalURL);
+    setOriginalUrlString(originalURL);
     setFormSubmitStatus(true);
     setShouldDisplayFormSubmtiAnimation(true);
 
-    await getShortUrl(originalURL);
+    setShortUrlString(await getShortUrl(originalURL));
 
     setShouldDisplayFormSubmtiAnimation(false);
     setShouldDisplayShortUrlInfo(true);
@@ -29,6 +33,7 @@ const UrlShortenerSection = () => {
     setFormSubmitStatus(false);
   };
 
+  // helper methods for rendering
   const renderUrlShortenerForm = () => {
     if (!formSubmitStatus) return <UrlShortenerForm onSubmit={shortenUrl} />;
   };
@@ -43,11 +48,9 @@ const UrlShortenerSection = () => {
       return (
         <>
           <p className="url-type">Original URL</p>
-          <p className="url-string-box">https://google.com</p>
+          <p className="url-string-box">{originalUrlString}</p>
           <p className="url-type">Short URL</p>
-          <p className="url-string-box">
-            https://shortify.netlify.app/aBcd8o/abcowoeiwl
-          </p>
+          <p className="url-string-box">{shortUrlString}</p>
           <div className="copy-btn-container">
             <button className="copy-btn">Copy short URL!</button>
           </div>
