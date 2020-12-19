@@ -9,6 +9,9 @@
   width: 100%;
   min-height: 55%;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2.85vw 3.5vw;
   border-radius: 1.25vw;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -22,6 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -2.25vw;
   animation: fadeInWithLetterSpacing 0.75s ease-in-out infinite;
 }
 
