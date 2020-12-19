@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../commons/Input";
+import Button from "../../commons/Button";
 import "./UrlShortenerForm.css";
 
 const UrlShortenerForm = () => {
@@ -10,7 +11,12 @@ const UrlShortenerForm = () => {
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log("submitted");
+      }}
+    >
       <Input
         type="text"
         label="Original URL"
@@ -19,6 +25,7 @@ const UrlShortenerForm = () => {
         value={originalURL}
         onChange={updateOriginalURL}
       />
+      <Button label="Get short URL" />
     </form>
   );
 };
