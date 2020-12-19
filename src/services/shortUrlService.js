@@ -29,4 +29,16 @@ const getOriginalUrl = async (shortCode) => {
   return undefined;
 };
 
-export { getShortUrl, getOriginalUrl };
+const startsWithProperProtocol = (url) => {
+  return (
+    url.toLowerCase().startsWith("https://") ||
+    url.toLowerCase().startsWith("http://") ||
+    url.toLowerCase().startsWith("ftp://")
+  );
+};
+
+const formatUrl = (url) => {
+  return startsWithProperProtocol(url) ? url : `https://${url}`;
+};
+
+export { getShortUrl, getOriginalUrl, formatUrl };
