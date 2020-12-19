@@ -28,6 +28,15 @@ const UrlShortenerSection = () => {
     setShouldDisplayShortUrlInfo(true);
   };
 
+  const copyShortUrlToClipboard = () => {
+    let shortUrlParagraph = document.createElement("textarea");
+    shortUrlParagraph.innerText = shortUrlString;
+    document.body.appendChild(shortUrlParagraph);
+    shortUrlParagraph.select();
+    document.execCommand("copy");
+    shortUrlParagraph.remove();
+  };
+
   const letUserShortenAnotherLink = () => {
     setShouldDisplayShortUrlInfo(false);
     setFormSubmitStatus(false);
@@ -52,7 +61,9 @@ const UrlShortenerSection = () => {
           <p className="url-type">Short URL</p>
           <p className="url-string-box">{shortUrlString}</p>
           <div className="copy-btn-container">
-            <button className="copy-btn">Copy short URL!</button>
+            <button className="copy-btn" onClick={copyShortUrlToClipboard}>
+              Copy short URL!
+            </button>
           </div>
           <p
             className="short-new-url-prompt"
