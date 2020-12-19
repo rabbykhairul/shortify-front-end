@@ -48,4 +48,8 @@ const formatUrl = (url) => {
   }
 };
 
-export { getShortUrl, getOriginalUrl, formatUrl };
+const isValidUrl = (url) => {
+  return formatUrl(url) ? true : false;
+};
+
+export { getShortUrl, getOriginalUrl, formatUrl, isValidUrl };
