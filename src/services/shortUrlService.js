@@ -1,6 +1,7 @@
 import http from "./httpService";
 
-const SHORT_URL_API_END_POINT = "http://localhost:3000/api/short-url";
+const SHORT_URL_API_END_POINT =
+  "https://shortify-back-end.herokuapp.com/api/short-url";
 
 const getShortUrl = async (originalURL) => {
   const { data } = await http.post(SHORT_URL_API_END_POINT, {
