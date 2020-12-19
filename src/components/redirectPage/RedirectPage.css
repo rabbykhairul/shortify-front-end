@@ -3,10 +3,8 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
-  padding-left: 5vw;
-  padding-bottom: 35vh;
-  /* justify-content: center; */
-  /* flex-direction: column; */
+  padding-left: 8.75vw;
+  padding-bottom: 40vh;
 }
 
 .redirect-page-container h1 {
