@@ -9,6 +9,7 @@ const Input = (props) => {
     placeholder = "",
     value,
     onChange,
+    errorMessage,
   } = props;
 
   return (
@@ -21,6 +22,7 @@ const Input = (props) => {
         value={value}
         onChange={onChange}
       />
+      {errorMessage && <span className="error-message">{errorMessage}</span>}
     </label>
   );
 };

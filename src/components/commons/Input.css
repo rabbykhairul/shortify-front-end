@@ -36,3 +36,11 @@ input[type="password"]:focus {
   border: 0.01vw solid black;
   outline: none;
 }
+
+.input-box .error-message {
+  color: red;
+  font-size: 0.8vw;
+  font-weight: 300;
+  text-transform: lowercase;
+  padding-top: 1vw;
+}
