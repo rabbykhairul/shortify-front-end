@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { formatUrl } from "../../../services/shortUrlService";
+import { formatUrl, isValidUrl } from "../../../services/shortUrlService";
 import Input from "../../commons/Input";
 import Button from "../../commons/Button";
 import "./UrlShortenerForm.css";
@@ -12,6 +12,8 @@ const UrlShortenerForm = (props) => {
 
   const updateOriginalURL = (e) => {
     setOriginalURL(e.currentTarget.value);
+    if (isValidUrl(e.currentTarget.value)) setErrorMessage("");
+    else setErrorMessage("Please type in a valid url!");
   };
 
   const handleFormSubmit = (e) => {
