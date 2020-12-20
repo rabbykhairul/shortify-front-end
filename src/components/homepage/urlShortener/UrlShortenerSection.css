@@ -100,11 +100,14 @@
   font-weight: 500;
   letter-spacing: 0.075vw;
   line-height: 1.75vw;
-  padding-bottom: 1vw;
 }
 
-.url-shortening-error-indicator ul {
-  margin-left: 3vw;
+.url-shortening-error-indicator ~ ul {
+  font-size: 1vw;
+  letter-spacing: 0.075vw;
+  line-height: 1.25vw;
+  margin-left: 1.85vw;
+  padding-bottom: 1vw;
 }
 
 .short-new-url-prompt {
