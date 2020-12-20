@@ -100,11 +100,11 @@ const UrlShortenerSection = () => {
         <>
           <p className="url-shortening-error-indicator">
             Shortening operation failed! May be -
-            <ul>
-              <li>the server is down</li>
-              <li>or you tried to shorten an invalid url</li>
-            </ul>
           </p>
+          <ul>
+            <li>the server is down</li>
+            <li>or you tried to shorten an invalid url</li>
+          </ul>
           <p
             className="short-new-url-prompt"
             onClick={letUserShortenAnotherLink}
