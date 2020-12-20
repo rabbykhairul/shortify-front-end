@@ -1,24 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getShortUrl } from "../../../services/shortUrlService";
 import UrlShortenerForm from "./UrlShortenerForm";
 import "./UrlShortenerSection.css";
 
+// regular variables moved outside to remove useEffect missing dependency warnings
+const roundCardContainerStyles = {
+  width: "21.5vw",
+  height: "21.5vw",
+  borderRadius: "50%",
+};
+
+const regularCardContainerStyles = {
+  width: "100%",
+  height: "fit-content",
+  borderRadius: "1.25vw",
+};
+
+// component functions starts here
+
 const UrlShortenerSection = () => {
   // state variables
   const [formSubmitStatus, setFormSubmitStatus] = useState(false);
+
   const [
     shouldDisplayFormSubmitAnimation,
     setShouldDisplayFormSubmtiAnimation,
   ] = useState(false);
+
   const [shouldDisplayShortUrlsInfo, setShouldDisplayShortUrlInfo] = useState(
     false
   );
+
   const [
     urlShorteningOperationFailed,
     setUrlShorteningOperationFailed,
   ] = useState(false);
+
   const [shortUrlString, setShortUrlString] = useState("");
   const [originalUrlString, setOriginalUrlString] = useState("");
+
+  const [cardStyleContainerStyles, setCardStyleContainerStyles] = useState(
+    regularCardContainerStyles
+  );
+
+  // useEffect hooks
+  // animate card-style-container div if user submits url shortener form
+  useEffect(() => {
+    if (shouldDisplayFormSubmitAnimation)
+      setCardStyleContainerStyles(roundCardContainerStyles);
+    else setCardStyleContainerStyles(regularCardContainerStyles);
+  }, [shouldDisplayFormSubmitAnimation]);
 
   // event handlers
   const shortenUrl = async (originalURL) => {
@@ -109,7 +140,7 @@ const UrlShortenerSection = () => {
 
   return (
     <div className="url-shortener-section">
-      <div className="card-style-container">
+      <div className="card-style-container" style={cardStyleContainerStyles}>
         {renderUrlShortenerForm()}
         {renderFormSubmitAnimation()}
         {renderMessageToIndicateUrlShorteningError()}
