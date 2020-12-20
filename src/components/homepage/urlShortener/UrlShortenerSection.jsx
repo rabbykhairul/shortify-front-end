@@ -102,8 +102,8 @@ const UrlShortenerSection = () => {
             Shortening operation failed! May be -
           </p>
           <ul>
-            <li>the server is down</li>
-            <li>or you tried to shorten an invalid url</li>
+            <li>You tried to shorten an invalid url</li>
+            <li>Or your device is offline</li>
           </ul>
           <p
             className="short-new-url-prompt"
